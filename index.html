@@ -1,0 +1,1245 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Weaver API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-90ac6a42.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-37843bd1.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+        </div>
+      
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="INTRODUCTION">INTRODUCTION</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#first-why-use-weaver" class="toc-h2 toc-link" data-title="First, Why Use Weaver?">First, Why Use Weaver?</a>
+                  </li>
+                  <li>
+                    <a href="#let-39-s-start-by-defining-some-key-terminology" class="toc-h2 toc-link" data-title="Let's Start by Defining Some Key Terminology...">Let's Start by Defining Some Key Terminology...</a>
+                  </li>
+                  <li>
+                    <a href="#request-response-format" class="toc-h2 toc-link" data-title="Request/Response Format">Request/Response Format</a>
+                  </li>
+                  <li>
+                    <a href="#errors" class="toc-h2 toc-link" data-title="Errors">Errors</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="AUTHENTICATION">AUTHENTICATION</a>
+          </li>
+          <li>
+            <a href="#gateways" class="toc-h1 toc-link" data-title="GATEWAYS">GATEWAYS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#gateway-object" class="toc-h2 toc-link" data-title="Gateway Object">Gateway Object</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-gateways" class="toc-h2 toc-link" data-title="Get All Gateways">Get All Gateways</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-gateway-object" class="toc-h2 toc-link" data-title="Get a Specific Gateway Object">Get a Specific Gateway Object</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#gateway-actions" class="toc-h1 toc-link" data-title="GATEWAY ACTIONS">GATEWAY ACTIONS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#pair-new-device-to-gateway" class="toc-h2 toc-link" data-title="Pair New Device to Gateway">Pair New Device to Gateway</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#devices" class="toc-h1 toc-link" data-title="DEVICES">DEVICES</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#device-object" class="toc-h2 toc-link" data-title="Device Object">Device Object</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-device-object" class="toc-h2 toc-link" data-title="Get a Specific Device Object">Get a Specific Device Object</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#device-actions" class="toc-h1 toc-link" data-title="DEVICE ACTIONS">DEVICE ACTIONS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#action-object" class="toc-h2 toc-link" data-title="Action Object">Action Object</a>
+                  </li>
+                  <li>
+                    <a href="#issuing-an-action-request-to-a-device" class="toc-h2 toc-link" data-title="Issuing an Action Request to a Device">Issuing an Action Request to a Device</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#door-locks" class="toc-h1 toc-link" data-title="DOOR LOCKS">DOOR LOCKS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lock-a-door" class="toc-h2 toc-link" data-title="Lock a Door">Lock a Door</a>
+                  </li>
+                  <li>
+                    <a href="#unlock-a-door" class="toc-h2 toc-link" data-title="Unlock a Door">Unlock a Door</a>
+                  </li>
+                  <li>
+                    <a href="#set-a-pin-code" class="toc-h2 toc-link" data-title="Set a Pin Code">Set a Pin Code</a>
+                  </li>
+                  <li>
+                    <a href="#clear-a-pin-code" class="toc-h2 toc-link" data-title="Clear a Pin Code">Clear a Pin Code</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#action-requests" class="toc-h1 toc-link" data-title="ACTION REQUESTS">ACTION REQUESTS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#action-request-object" class="toc-h2 toc-link" data-title="Action Request Object">Action Request Object</a>
+                  </li>
+                  <li>
+                    <a href="#understanding-action-requests" class="toc-h2 toc-link" data-title="Understanding Action Requests">Understanding Action Requests</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <p><img src="https://i.imgur.com/yw6JEsa.png" alt="Weaver Documentation Header" /></p>
+<h1 id='introduction'>INTRODUCTION</h1>
+<p>Welcome to the Weaver API! You can use our API to retrieve information on your gateways, their connected devices, and issue commands to them.</p>
+<h3 id='first-why-use-weaver'>First, Why Use Weaver?</h3>
+<p>In the gilded age of IoT, one could reasonably ask why do we need yet another API? Well, it turns that despite all the progress in the past few years, doing things with IoT devices is still really hard.</p>
+<h4 id='mesh-networking-is-hard'>Mesh Networking is Hard</h4>
+<p>First, most IoT devices don&#39;t connect to standard wifi. Instead, they use a variety of mesh networking protocols that, while being power efficient, all have the bad habit of being poorly documented and (consequentially) poorly followed by IoT device manufacturers.</p>
+
+<p>As a result, communicating with IoT devices requires diving into 1000+ pages PDFs and parsing byte payloads for cryptic messages. YUCK!</p>
+<h4 id='leaping-over-the-firewall'>Leaping Over the Firewall</h4>
+<p>Second, odds are you want to control your IoT devices remotely. Aside from converting HTTP requests to IoT protocol messages, you also need to bypass your wifi router&#39;s firewall which blocks random internet requests from ever reaching your devices.</p>
+
+<p>Obviously, firewalls are good (and please don&#39;t poke holes in them), but it also means that any legitimate remote requests you make to unlock a door or turn on the heater will end in <code>/dev/null</code>.</p>
+<h4 id='making-iot-great-again'>Making IoT Great Again!</h4>
+<p>We started Weaver to make building applications that interact with IoT devices as easy as possible. We spent years wrestling with many of these problems and wished that there could be a simple API that would abstract it all away.</p>
+
+<p>The following guide is intended to walk you through the core ideas behind weaver, such as making authenticated API requests, device commands, and listening for events.</p>
+<h2 id='let-39-s-start-by-defining-some-key-terminology'>Let&#39;s Start by Defining Some Key Terminology...</h2>
+<p><img src="https://i.imgur.com/jrJsrqN.jpg" alt="Weaver overview" /></p>
+
+<p>Above is an end to end overview diagram of Weaver. Let&#39;s define each term.</p>
+<h5 id='your-app'>YOUR APP</h5>
+<p>This is You! You can send requests to the Weaver REST API and receive responses from that API, as well as status updates from either Webhooks or Websockets.</p>
+<h5 id='weaver-api'>WEAVER API</h5>
+<p>This is the REST API that your application can query. This API is accessible from anywhere and takes simple commands and forwards them to the gateway.</p>
+<h5 id='weaver-gateway'>WEAVER GATEWAY</h5>
+<p>This is the hardware hub that&#39;s provided by Weaver. It resides on your local area network (LAN) and creates a link to the outside world via a secure connection to the Weaver API. Its job is to take simple commands and translate them to lower-level mesh protocol commands that end devices can understand.</p>
+<h5 id='end-devices'>END DEVICES</h5>
+<p>This is a generic term we&#39;ll be using and which refers to any connected device or sensor, such as door locks, lights, noise sensors thermostats...etc.</p>
+<h2 id='request-response-format'>Request/Response Format</h2>
+<p>The default response format is JSON. Requests with a message-body use plain JSON to set or update resource attributes. Successful requests will return a <code>200 OK</code> HTTP status.</p>
+
+<p>Some general information about responses:</p>
+
+<ul>
+<li>Dates are returned in ISO8601 format: <code>YYYY-MM-DDTHH:MM:SS</code></li>
+<li>Resource IDs are returned as integers or uuids</li>
+</ul>
+<h2 id='errors'>Errors</h2>
+<p>Occasionally you might encounter errors when accessing the REST API. There are four possible types:</p>
+
+<table><thead>
+<tr>
+<th>Status Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Couldn&#39;t authenticate your request</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Invalid scope -- User hasn’t authorized necessary scope</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- Server error</td>
+</tr>
+</tbody></table>
+<h1 id='authentication'>AUTHENTICATION</h1>
+<p>The Weaver API uses API keys to authenticate requests. You can view and manage your API keys in the Weaver Dashboard or by calling your user profile endpoint using your user auth token.</p>
+
+<p>Authentication to the API is performed via <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a>. Provide your API key as the basic auth username value. You do not need to provide a password.</p>
+
+<p>Test mode secret keys have the prefix <code>wk_test_</code> and live mode secret keys have the prefix <code>wk_prod_</code>. We plan to eventually introduce restricted API keys for granular permissions.</p>
+
+<p>Your API keys carry many privileges, so be sure to keep them secure! Do not share your secret API keys in publicly accessible areas.</p>
+
+<aside class="notice">
+Make sure to replace <code>YOUR_API_KEY</code> with your actual API key.
+</aside>
+
+<p>If you are running the shell examples, you can simply export your API key in your current terminal session as such: <code>export YOUR_API_KEY=&quot;&lt;your actual API key&gt;&quot;</code></p>
+
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># With curl, you can use -u followed by your API key. Adding `:` after the key will simply tell curl not to ask you for a password.</span>
+curl <span class="s2">"https://api.getweaver.io/v1/gateways"</span> <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="c1"># In ruby, we first need to encode the key using Base64 before adding it to the request header</span>
+<span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.getweaver.io/v1/gateways'</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre><h1 id='gateways'>GATEWAYS</h1>
+<p>Weaver Gateways are the resource representing the hardware hub that&#39;s provided by Weaver.</p>
+
+<p>The hardware resides on your local area network (LAN) and creates a link to the outside world via a secure connection to the Weaver API. Its job is to take simple commands and translate them to lower-level mesh protocol commands that end devices can understand.</p>
+
+<p>You can query the API for a list of all your gateways, as well as an individual gateway to see its attributes and associated end devices.</p>
+<h2 id='gateway-object'>Gateway Object</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>uuid</td>
+<td>The ID of the Gateway</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>array</td>
+<td>The associated devices of the Gateway</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the Gateway</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>The connectivity status of the Gateway</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-gateways'>Get All Gateways</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/gateways"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.getweaver.io/v1/gateways'</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"486044af-5b15-436e-a356-d5f28c28f22a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70354027-dcfa-48aa-acb1-9b79fd56b485"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset914 5c:a1:0"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"914"</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650 Valencia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1996c71c-09e6-454a-9d0b-efc214231907"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"538 Folsom - Unit 20"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"offline"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of your organization&#39;s Weaver Gateways.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /v1/gateways</code></p>
+<h2 id='get-a-specific-gateway-object'>Get a Specific Gateway Object</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/gateways/</span><span class="k">${</span><span class="nv">GATEWAY_ID</span><span class="k">}</span><span class="s2">"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.getweaver.io/v1/gateways/</span><span class="si">#{</span><span class="no">GATEWAY_ID</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"486044af-5b15-436e-a356-d5f28c28f22a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70354027-dcfa-48aa-acb1-9b79fd56b485"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset914 5c:a1:0"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"914"</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"650 Valencia"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific gateway and its associated devices.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /v1/gateways/&lt;GATEWAY_ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GATEWAY_ID</td>
+<td>The ID of the gateway to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='gateway-actions'>GATEWAY ACTIONS</h1>
+<p>Gateway Actions represent the capabilities of a Gateway.</p>
+<h2 id='pair-new-device-to-gateway'>Pair New Device to Gateway</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/gateways/</span><span class="k">${</span><span class="nv">GATEWAY_ID</span><span class="k">}</span><span class="s2">/actions/pair_devices"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.getweaver.io/v1/gateways/${GATEWAY_ID}/actions/pair_devices'</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1996c71c-09e6-454a-9d0b-efc214231907"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"538 Folsom - Unit 20"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pairing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To connect a device to a gateway, you need to put the gateway into pairing mode and manually add the end devices.</p>
+
+<p>When the end devices join your Weaver Gateway&#39;s network, the Gateway will automatically register them to the Weaver API.</p>
+
+<p>Once you issue the request, the Gateway will transition into a <code>pairing</code> status.</p>
+
+<aside class="">You cannot add devices using just the REST API. Please refer to the end device's user manual to find the manual pairing instructions.</aside>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /v1/gateways/&lt;GATEWAY_ID&gt;/actions/pair_devices</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GATEWAY_ID</td>
+<td>The ID of the gateway to make the request to</td>
+</tr>
+</tbody></table>
+<h1 id='devices'>DEVICES</h1>
+<p>End devices are any end device such as a sensor, a door locks, a light, a thermostats...etc. Most of these devices are battery-powered and therefore low-powered. As a result, they usually speak a mesh network protocol that Weaver abstracts away for you through clean API endpoints.</p>
+<h2 id='device-object'>Device Object</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"914"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset914 5c:a1:0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"lock"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locks the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"unlock"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unlock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unlocks the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"set_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set Code"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set User Code for the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pin Code, all numbers, can start
+                        with 0, must be between 4 and 8 digits in
+                        length"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot ID"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 through 11"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"clear_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear Code"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear a User Code for the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot ID"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 through 11"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>uuid</td>
+<td>The ID of the Device</td>
+</tr>
+<tr>
+<td>manufacturer</td>
+<td>string</td>
+<td>The manufacturer of the Device</td>
+</tr>
+<tr>
+<td>model</td>
+<td>string</td>
+<td>The model of the Device</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the Device</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>object</td>
+<td>The list of supported actions by this device</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-device-object'>Get a Specific Device Object</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="k">${</span><span class="nv">DEVICE_ID</span><span class="k">}</span><span class="s2">"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="si">#{</span><span class="no">DEVICE_ID</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"914"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset914 5c:a1:0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"lock"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locks the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"unlock"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unlock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unlocks the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"set_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set Code"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set User Code for the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pin Code, all numbers, can start
+                        with 0, must be between 4 and 8 digits in
+                        length"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot ID"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 through 11"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"clear_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear Code"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear a User Code for the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot ID"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 through 11"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific device. Note that the listed device will also list its supported actions. Please refer to the Action Requests section to see how to make an action request to a device</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /v1/devices/&lt;DEVICE_ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DEVICE_ID</td>
+<td>The ID of the device to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='device-actions'>DEVICE ACTIONS</h1>
+<p>Actions represent the capabilities of a Device. Each type of device supports
+a unique list of actions. This Action Object defines the requisite inputs for
+requesting each action type.</p>
+<h2 id='action-object'>Action Object</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"set_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set Code"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set User Code for the Door Lock"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pin Code, all numbers, can start
+                    with 0, must be between 4 and 8 digits in
+                    length"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot ID"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 through 11"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>A title of the Action</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>A description of the Action</td>
+</tr>
+<tr>
+<td>inputs</td>
+<td>object</td>
+<td>An input object with: a title for the input, a description of its validation parameters, and its primitive type (one of null, boolean, object, array, number, integer or string)</td>
+</tr>
+</tbody></table>
+<h2 id='issuing-an-action-request-to-a-device'>Issuing an Action Request to a Device</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="k">${</span><span class="nv">DEVICE_ID</span><span class="k">}</span><span class="s2">/actions/</span><span class="k">${</span><span class="nv">ACTION_NAME</span><span class="k">}</span><span class="s2">"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="si">#{</span><span class="no">DEVICE_ID</span><span class="si">}</span><span class="s2">/actions/</span><span class="si">#{</span><span class="no">ACTION_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41f7cf-b49d-4e8b-856c-5e12d1b8ca48"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"lock"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint requests an Action from a specific device. You will receive an <a href="#action-requests">Action
+Request</a> object as a response. The Action Request can be used to track the progress
+of the request. Please read the <a href="#understanding-action-requests">Understanding Action Requests</a>
+section for a more thorough explanation of the Action Request lifecycle.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /v1/devices/&lt;DEVICE_ID&gt;/actions/&lt;ACTION_NAME&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DEVICE_ID</td>
+<td>The ID of the device to retrieve</td>
+</tr>
+<tr>
+<td>ACTION_NAME</td>
+<td>The Name of the Action requested</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>Please refer to the Inputs field in the Device Actions list to see the requirements of each input</p>
+<h1 id='door-locks'>DOOR LOCKS</h1><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kwikset914 5c:a1:0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"lock"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locks the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"unlock"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unlock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unlocks the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"set_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set Code"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set User Code for the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pin Code, all numbers, can start
+                        with 0, must be between 4 and 8 digits in
+                        length"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot ID"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 through 11"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"clear_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear Code"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear a User Code for the Door Lock"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot ID"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 through 11"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Door locks are currently the only device type supported by the Weaver API.</p>
+
+<p>At the moment, the API supports 4 basic commands:</p>
+
+<ul>
+<li>Lock a door</li>
+<li>Unlock the door</li>
+<li>Set a code for a user</li>
+<li>Clear a code for a user</li>
+</ul>
+
+<p>As you can see on the right side, a door lock device object will indicate its supported commands given a manufacturer/model type.</p>
+<h2 id='lock-a-door'>Lock a Door</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="k">${</span><span class="nv">DEVICE_ID</span><span class="k">}</span><span class="s2">/actions/lock"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="si">#{</span><span class="no">DEVICE_ID</span><span class="si">}</span><span class="s2">/actions/lock"</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41f7cf-b49d-4e8b-856c-5e12d1b8ca48"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"lock"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint issues a &quot;lock&quot; action to a door lock.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /v1/devices/&lt;DEVICE_ID&gt;/actions/lock</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DEVICE_ID</td>
+<td>The ID of the device you&#39;re commanding</td>
+</tr>
+</tbody></table>
+<h2 id='unlock-a-door'>Unlock a Door</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="k">${</span><span class="nv">DEVICE_ID</span><span class="k">}</span><span class="s2">/actions/unlock"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.getweaver.io/v1/devices/#{DEVICE_ID}/actions/unlock'</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41f7cf-b49d-4e8b-856c-5e12d1b8ca48"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"unlock"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint issues a &quot;unlock&quot; action to a door lock.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST /v1/devices/&lt;DEVICE_ID&gt;/actions/unlock</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DEVICE_ID</td>
+<td>The ID of the device you&#39;re commanding</td>
+</tr>
+</tbody></table>
+<h2 id='set-a-pin-code'>Set a Pin Code</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"code": "8888", "slot_id": 8}}'</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="k">${</span><span class="nv">DEVICE_ID</span><span class="k">}</span><span class="s2">/actions/set_code"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'data'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'code'</span><span class="p">:</span> <span class="s1">'8888'</span><span class="p">,</span>
+    <span class="s1">'slot_id'</span><span class="p">:</span> <span class="mi">8</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.getweaver.io/v1/devices/#{DEVICE_ID}/actions/set_code'</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41f7cf-b49d-4e8b-856c-5e12d1b8ca48"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"set_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8888"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint issues a &quot;set_code&quot; action to a door lock.</p>
+
+<p>The Weaver API allows you to set a different code for up to 10 different users. To do set the a code for a specific user, set the <code>slot_id</code> parameter to a value between 1 to 10. If you do not provide this value, the <code>slot_id</code> will default to <code>1</code>.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /v1/devices/&lt;DEVICE_ID&gt;/actions/set_code</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DEVICE_ID</td>
+<td>The ID of the device you&#39;re commanding</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>Code to be programmed</td>
+</tr>
+<tr>
+<td>slot_id</td>
+<td>integer</td>
+<td>ID of the Code slot to be programmed in</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Please refer to the Device's Action object for details on each input's
+validation requirements.
+</aside>
+<h2 id='clear-a-pin-code'>Clear a Pin Code</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  -u <span class="s2">"</span><span class="k">${</span><span class="nv">YOUR_API_KEY</span><span class="k">}</span><span class="s2">:"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"data": {"slot_id": 8}}'</span> <span class="se">\</span>
+  <span class="s2">"https://api.getweaver.io/v1/devices/</span><span class="k">${</span><span class="nv">DEVICE_ID</span><span class="k">}</span><span class="s2">/actions/clear_code"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="no">YOUR_API_KEY</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic </span><span class="si">#{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">}</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'data'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'slot_id'</span><span class="p">:</span> <span class="mi">8</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.getweaver.io/v1/devices/#{DEVICE_ID}/actions/clear_code'</span>
+
+<span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="ss">headers: </span><span class="n">headers</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41f7cf-b49d-4e8b-856c-5e12d1b8ca48"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"clear_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint issues a &quot;clear_code&quot; action to a door lock.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST /v1/devices/&lt;DEVICE_ID&gt;/actions/clear_code</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DEVICE_ID</td>
+<td>The ID of the device you&#39;re commanding</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>slot_id</td>
+<td>integer</td>
+<td>ID of Code slot to be programmed in</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Please refer to the Device's Action object for details on each input's
+validation requirements.
+</aside>
+<h1 id='action-requests'>ACTION REQUESTS</h1>
+<p>Actions are how we interact with end devices, such as locking a door or
+turning off a light.</p>
+
+<p>Action Requests are a special way of encapsulating a request for a device
+to perform an action and we discuss them in-depth in the
+<a href="#understanding-action-requests">Understanding Action Requests</a> section.</p>
+<h2 id='action-request-object'>Action Request Object</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41f7cf-b49d-4e8b-856c-5e12d1b8ca48"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9980a513-7a7b-434c-801f-27008fd0fcda"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"set_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8888"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slot_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-10T01:33:19.955Z"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>uuid</td>
+<td>The ID of the Action Request</td>
+</tr>
+<tr>
+<td>device_id</td>
+<td>uuid</td>
+<td>The ID of the Device that received the Action Request</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>The key contains the action name, and the values contain the inputs issued for the action</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>The status of the Action Request</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Datetime when the Action Request was created</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Datetime when the Action Request was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='understanding-action-requests'>Understanding Action Requests</h2>
+<p>Each time we issue an action request for a specific end device, the Weaver API creates an <code>ActionRequest</code> object and returns its reference. It also forwards the action request to the specific device via the Weaver Gateway.</p>
+<h3 id='the-action-request-lifecycle'>The Action Request Lifecycle</h3>
+<p>You will notice that the <code>ActionRequest</code> object has a <code>status</code> field which indicates the state of the action.</p>
+
+<p><img src="https://i.imgur.com/WMETML2.jpg" alt="Action Request Lifecycle" /></p>
+
+<p>When an <code>action_request</code> object is created, its initial <code>status</code> will be <code>initialized</code>. This is because in the IoT world, <strong>everything is asynchronous</strong>, meaning that action_requests can take on the order of seconds, minutes, or even days to complete.</p>
+
+<p>When the Gateway has forwarded the action request to the device, the status of the action request will automatically update to <code>pending</code>.</p>
+
+<p>Finally, when the command has been successfully completed by the end device, its status will update to <code>completed</code>.</p>
+<h3 id='tracking-the-progress-of-an-action-request'>Tracking the Progress of an Action Request</h3>
+<p>When you initiate an action, the API will create an action request object and return its reference. You can then receive updates on the status of the action by fetching the Action Request again or via a predefined HTTP Webhook (upcoming feature).</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
